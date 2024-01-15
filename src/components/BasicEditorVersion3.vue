@@ -26,9 +26,6 @@ import myscriptMath from "./Editor/myscriptMath";
 import { Boot } from "@wangeditor/editor";
 import formulaModule from "@wangeditor/plugin-formula";
 
-// mode
-const mode = ref('add')
-
 // 插件注入
 Boot.registerModule(formulaModule);
 Boot.registerMenu(kityformula);

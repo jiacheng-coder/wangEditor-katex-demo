@@ -5,29 +5,17 @@
   </div>
   <hr>
 
-  <BasicEditor v-if="show"></BasicEditor>
+  <BasicEditor v-show="show"></BasicEditor>
   <!-- <ExtendedEditor v-if="show"></ExtendedEditor> -->
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import BasicEditor from './components/BasicEditor.vue'
-// import ExtendedEditor from './components/ExtendedEditor.vue'
+import ExtendedEditor from './components/ExtendedEditor.vue'
 
-export default {
-  name: 'App',
-  components: {
-    BasicEditor,
-    // ExtendedEditor,
-  },
-  data() {
-    return {
-      show: true
-    }
-  },
-  methods: {
-    toggle() {
-      this.show = !this.show
-    }
-  }
+const show = ref(true)
+function toggle() {
+  show.value = !show.value
 }
 </script>
